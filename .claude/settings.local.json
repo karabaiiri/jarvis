@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m venv venv)",
+      "Bash(source venv/Scripts/activate)",
+      "Bash(python run.py)",
+      "Bash(pip install sqlalchemy)",
+      "Bash(curl -s -X POST \"http://localhost:8000/log-trade\" -H \"Content-Type: application/json\" -d \"{\"\"date\"\":\"\"2026-03-07\"\",\"\"instrument\"\":\"\"NQ\"\",\"\"trade_direction\"\":\"\"long\"\",\"\"traded_scenario\"\":\"\"Bullish continuation above PMH\"\",\"\"entry_price\"\":18320.25,\"\"stop_price\"\":18292.25,\"\"exit_price\"\":18428.25,\"\"points_result\"\":108.0,\"\"followed_plan\"\":true,\"\"main_mistake\"\":\"\"Entered a little early\"\",\"\"lesson\"\":\"\"Wait for better confirmation above key level\"\"}\")",
+      "Bash(curl -s http://localhost:8000/)",
+      "Bash(curl -s http://localhost:8000/openapi.json)",
+      "Bash(python -c \"import sys,json; routes=[r[''path''] for r in json.load\\(sys.stdin\\)[''paths'']]; print\\(''\\\\n''.join\\(routes\\)\\)\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''\\\\n''.join\\(d[''paths''].keys\\(\\)\\)\\)\")",
+      "Bash(python -c \"from app.api.journal import router; print\\(''routes:'', [r.path for r in router.routes]\\)\")",
+      "Bash(xargs rm -rf)",
+      "Bash(netstat -ano)",
+      "Bash(tasklist)"
+    ]
+  }
+}
