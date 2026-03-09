@@ -2,8 +2,8 @@ from app.core.market_mock import get_mock_market_snapshot
 from app.core.scoring import get_primary_bias, get_expansion_potential
 from app.core.scenarios import get_scenarios
 
-def get_mock_preopen_report():
-    snapshot = get_mock_market_snapshot()
+def get_mock_preopen_report(regime: str = "bullish", date: str = None):
+    snapshot = get_mock_market_snapshot(regime, date)
     primary_bias = get_primary_bias(snapshot)
     expansion_potential = get_expansion_potential(snapshot)
     scenarios = get_scenarios(primary_bias, snapshot)

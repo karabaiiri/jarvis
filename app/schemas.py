@@ -18,3 +18,21 @@ class TradeJournalResponse(TradeJournalCreate):
 
     class Config:
         from_attributes = True
+
+
+class MarketOutcomeCreate(BaseModel):
+    date: str
+    instrument: str
+    actual_day_direction: str
+    actual_primary_move: str
+    best_scenario_match: str
+    did_market_follow_primary_scenario: bool
+    range_expansion_happened: bool
+    points_from_open_to_main_move: float
+    market_notes: str
+
+class MarketOutcomeResponse(MarketOutcomeCreate):
+    id: int
+
+    class Config:
+        from_attributes = True
